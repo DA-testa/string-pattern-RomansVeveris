@@ -2,11 +2,9 @@ def read_input():
 
 	choose = input()
 	if "F" in choose:
-		filename = input()
-		if "a" not in filename:
-			with open("tests/" + filename, 'r') as file:
-				pattern = file.readline().rstrip()
-				text = file.readline().rstrip()
+		with open("tests/6" + filename, 'r') as file:
+			pattern = file.readline().rstrip()
+			text = file.readline().rstrip()
 
 	elif "I" in choose:
 		pattern = input().rstrip()
