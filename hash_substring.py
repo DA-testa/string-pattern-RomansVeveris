@@ -1,6 +1,19 @@
 def read_input():
 
-    return (input().rstrip(), input().rstrip())
+	choose = input()
+	if "F" in choose:
+		filename = input()
+		if "a" not in filename:
+			with open("tests/" + filename, 'r') as file:
+				pattern = int(file.readline().rstrip())
+				text = int(file.readline().rstrip())
+
+	elif "I" in choose:
+		pattern = input().rstrip()
+		text = input().rstrip()
+
+
+	return pattern, text
 
 
 def print_occurrences(output):
