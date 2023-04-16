@@ -2,7 +2,7 @@ def read_input():
 
 	choose = input()
 	if "F" in choose:
-		with open("tests/" + "6", 'r') as file:
+		with open("tests/" + "06", 'r') as file:
 			pattern = file.readline().rstrip()
 			text = file.readline().rstrip()
 
