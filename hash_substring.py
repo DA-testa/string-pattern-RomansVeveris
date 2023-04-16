@@ -15,18 +15,35 @@ def read_input():
     # this is the sample return, notice the rstrip function
     return (input().rstrip(), input().rstrip())
 
+
 def print_occurrences(output):
     # this function should control output, it doesn't need any return
     print(' '.join(map(str, output)))
 
+
 def get_occurrences(pattern, text):
-    # this function should find the occurances using Rabin Karp alghoritm 
+    # this function should find the occurrences using Rabin Karp algorithm
 
-    # and return an iterable variable
-    return [0]
+    # Initialize variables
+    P = len(pattern)
+    T = len(text)
+    pattern_h = sum(ord(pattern[i]) * pow(10, P - i - 1) for i in range(P))
+    text_h = sum(ord(text[i]) * pow(10, P - i - 1 ) for i in range(P))
+    occurrences = []
 
+    # Loop through text
+    for i in range(T - P + 1):
+        # Check if hashes match
+        if pattern_h == text_h:
+            # Check if patterns match
+            if pattern == text[i:i + P]:
+                occurrences.append(i)
+        # Update hash for next iteration
+        if i < T - P
+            text_h = text_h - ord(text[i]) * pow(10, P - 1)
+            text_h = text_h * 10 + ord(text[i + P])
+    return occurrences
 
 # this part launches the functions
 if __name__ == '__main__':
     print_occurrences(get_occurrences(*read_input()))
-
