@@ -39,7 +39,7 @@ def get_occurrences(pattern, text):
             if pattern == text[i:i + P]:
                 occurrences.append(i)
         # Update hash for next iteration
-        if i < T - P
+        if i < T - P:
             text_h = text_h - ord(text[i]) * pow(10, P - 1)
             text_h = text_h * 10 + ord(text[i + P])
     return occurrences
